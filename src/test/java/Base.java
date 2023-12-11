@@ -23,7 +23,16 @@ public class Base
     @AfterMethod
     public void teardown()
     {
-        //driver.quit();
+        //wait some time to close the window
+        try
+        {
+            Thread.sleep(2000);
+        }
+        catch (InterruptedException e)
+        {
+            throw new RuntimeException(e);
+        }
+        driver.quit();
     }
 
 }
